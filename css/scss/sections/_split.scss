@@ -1,0 +1,102 @@
+
+.bg-left,
+.bg-right {
+	height: 100vh;
+	padding: rem-calc(30);
+	overflow: hidden;
+
+	@include breakpoint(large) {
+		padding: 0;
+	}
+
+	&.blur {
+		filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
+		-o-filter:blur(10px);
+		-ms-filter:blur(10px);
+		-moz-filter:blur(10px);
+		-webkit-filter:blur(10px);
+		filter:blur(10px);
+		overflow: hidden;
+		margin: -20px;
+		box-shadow: inset 0 0 0 3000px rgba(0, 0, 0, 0.5);
+	}
+
+	.fg-left,
+	.fg-right {
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+
+		@include breakpoint(large) {
+			height: 80vh;
+		}
+
+		.content-wrapper {
+			padding: rem-calc(30 20);
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 100%;
+
+			.content-wrapper-inner {
+				margin-bottom: rem-calc(20);
+				overflow: hidden;
+				height: 100%;
+			}
+
+			.logo {
+				display: block;
+				max-width: rem-calc(200);
+				margin: 0 auto;
+				margin-bottom: rem-calc(30);
+			}
+		}
+	}
+
+	.fg-right {
+		border-top-right-radius: rem-calc(5);
+		border-bottom-right-radius: rem-calc(5);
+		box-shadow: 5px 0 20px 0 rgba(0, 0, 0, 0.2), 2px 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+		@include breakpoint(large) {
+			width: 0;
+			transition: 0.08s ease-out;
+
+			.is-open & {
+				width: 66.66667%;
+			}
+		}
+	}
+
+	.fg-left {
+		border-top-left-radius: rem-calc(5);
+		border-bottom-left-radius: rem-calc(5);
+		box-shadow: -5px 0 20px 0 rgba(0, 0, 0, 0.2), -2px 5px 5px 0 rgba(0, 0, 0, 0.24);
+	}
+}
+
+.bg-left {
+	background: url('#{$img-path}/left.png');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	@include breakpoint(large) {
+		background-position: left;
+		background-size: contain;
+	}
+}
+
+.bg-right {
+	background: url('#{$img-path}/right.png');
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	@include breakpoint(large) {
+		background-position: right;
+		background-size: contain;
+	}
+}

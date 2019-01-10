@@ -1,0 +1,135 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin-bottom: rem-calc(21);
+    text-rendering: optimizeLegibility;
+    color: set-color('grey-700');
+    font-family: $primary-font;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h3,
+.h3,
+h4,
+.h4 {
+    margin-bottom: rem-calc(18);
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+    margin-bottom: rem-calc(12);
+    letter-spacing: rem-calc(2);
+}
+
+h1,
+.h1 {
+    font-size: rem-calc(26);
+}
+
+@include breakpoint(medium) {
+    h1,
+    .h1 {
+        line-height: 1.35;
+        font-size: rem-calc(31);
+    }
+}
+
+h2,
+.h2 {
+    line-height: 1.25;
+    font-size: rem-calc(24);
+}
+
+h3,
+.h3 {
+    line-height: 1.5;
+    font-size: rem-calc(20);
+}
+
+h4,
+.h4 {
+    line-height: 1.76;
+    font-size: rem-calc(17);
+}
+
+h5,
+.h5 {
+    text-transform: uppercase;
+    line-height: 1.7;
+    letter-spacing: rem-calc(2);
+    font-size: rem-calc(14);
+}
+
+h6,
+.h6 {
+    text-transform: uppercase;
+    line-height: 1.85;
+    letter-spacing: rem-calc(2);
+    font-size: rem-calc(13);
+}
+
+p img {
+    margin: 0;
+}
+
+p.lead {
+    margin-bottom: rem-calc(36);
+    line-height: 1.8;
+    color: set-color('grey-500');
+    font-family: $primary-font;
+    font-size: rem-calc(18);
+}
+
+@include breakpoint(medium) {
+    p.lead {
+        font-size: rem-calc(20);
+    }
+}
+
+em,
+i,
+strong,
+b {
+    line-height: 3rem;
+    font-size: rem-calc(16);
+    font-weight: normal;
+    font-style: normal;
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+small {
+    line-height: inherit;
+    font-size: rem-calc(11);
+}
+
+a {
+    text-decoration: none;
+    line-height: inherit;
+    color: inherit;
+    font-weight: 900;
+
+    &:hover {
+        color: set-color('accent-1');
+    }
+}

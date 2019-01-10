@@ -1,0 +1,83 @@
+.lightbox {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s, visibility 0s 0.3s;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    background: rgba(set-color('black'), 0.85);
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+    height: 100%;
+
+    @include breakpoint(medium) {
+        padding-right: 35px;
+        padding-left: 35px;
+    }
+
+    .js-lightbox-active & {
+        transition: opacity 0.3s, visibility 0s 0s;
+        visibility: visible;
+        opacity: 1;
+        z-index: 999;
+    }
+
+    .lightbox-inner {
+        position: relative;
+
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateY(-80px);
+            transition: opacity 0s, transform 0s ease-out;
+            opacity: 0;
+            z-index: 99;
+            background-color: set-color('accent-1');
+            cursor: pointer;
+            padding: rem-calc(20 25);
+            line-height: rem-calc(18);
+            color: set-color('white');
+
+            .icon {
+                font-size: rem-calc(25);
+            }
+
+            .js-lightbox-active & {
+                transform: translateY(0);
+                transition: opacity 0.3s, transform 0.3s ease-out;
+                opacity: 1;
+            }
+
+        }
+
+        .lightbox-content {
+            transform: translateY(-80px);
+            transition: opacity 0s, transform 0s ease-out;
+            opacity: 0;
+            min-width: 80px;
+            min-height: 80px;
+
+            .js-lightbox-active & {
+                transform: translateY(0);
+                transition: opacity 0.3s, transform 0.3s ease-out;
+                opacity: 1;
+            }
+
+            img {
+                min-width: 60px;
+                min-height: 60px;
+                max-height: calc(100vh - 90px);
+            }
+        }
+    }
+}
+
+body.js-lightbox-active {
+    overflow: hidden;
+}
