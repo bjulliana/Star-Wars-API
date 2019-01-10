@@ -1,12 +1,14 @@
 (function () {
 	'use strict';
 
-	let body            = document.querySelector('body'),
-	    inputArea       = document.querySelectorAll('.input-field'),
-	    listItem        = document.querySelectorAll('.list-item'),
-	    btButton        = document.querySelector('.back-top'),
-	    animatedObject  = document.querySelectorAll('.js-animation'),
-	    windowHeight    = window.innerHeight;
+	let body         = document.querySelector('body'),
+	    inputArea    = document.querySelectorAll('.input-field'),
+	    listItem     = document.querySelectorAll('.list-item'),
+	    closeIcon    = document.querySelector('.close-icon'),
+	    panelRight   = document.querySelector('.js-panel-right'),
+	    panelLeft    = document.querySelector('.js-panel-left'),
+	    jsPanel      = document.querySelectorAll('.js-panel'),
+	    windowHeight = window.innerHeight;
 
 	//Toggle Right Section
 	listItem.forEach(el => {
@@ -14,14 +16,23 @@
 			listItem.forEach(el => {
 				el.classList.remove('active');
 			});
+			jsPanel.forEach(el => {
+				el.classList.remove('is-active');
+			});
+			panelRight.classList.add('is-active');
 			body.classList.add('is-open');
 			el.classList.add('active');
 		});
 	});
-//
-//	mobileMenuClose.addEventListener('click', function () {
-//		body.classList.toggle('menu-is-open');
-//	});
+
+	closeIcon.addEventListener('click', function () {
+		body.classList.remove('is-open');
+		panelRight.classList.remove('is-active');
+		panelLeft.classList.add('is-active');
+		listItem.forEach(el => {
+			el.classList.remove('active');
+		});
+	});
 //
 ////Check for not-empty Field for Floating Label
 //	inputArea.forEach(el => {
