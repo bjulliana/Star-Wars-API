@@ -136,7 +136,7 @@
 					content       = `<li class="list-item"><a class="js-item-link" href="#" data-film="${item.films[url_index]}">${item.name}</a></li>`;
 					searchResult.innerHTML += content;
 				});
-				
+
 				itemLink = document.querySelectorAll('.js-item-link');
 
 				itemLink.forEach(item => {
@@ -166,8 +166,24 @@
 			});
 		});
 
+		let closePanel = () => {
+			body.classList.remove('is-open');
+			panelRight.classList.remove('is-active');
+			panelLeft.classList.add('is-active');
+			itemLink.forEach(el => {
+				el.classList.remove('active');
+			});
+		};
+
 		characters();
 
 		searchField.addEventListener('keyup', showResults, false);
+		closeIcon.addEventListener('click', closePanel, false);
+		//Added for Accessibility Purposes
+		closeIcon.addEventListener('keyup',function(e){
+			if (e.keyCode === 13) {
+				closePanel();
+			}
+		});
 	}
 )();

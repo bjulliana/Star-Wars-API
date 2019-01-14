@@ -8,7 +8,7 @@
 	.search-wrapper {
 		position: relative;
 
-		.search {
+		.search-input {
 			padding-right: rem-calc(45);
 		}
 
@@ -19,6 +19,14 @@
 			font-size: rem-calc(30);
 			padding-right: rem-calc(5);
 			color: set-color('grey-500');
+		}
+	}
+
+	.js-search-result {
+		display: none;
+
+		&.active {
+			display: block;
 		}
 	}
 
@@ -38,44 +46,16 @@
 				padding: rem-calc(10 0);
 				cursor: pointer;
 				position: relative;
-
-				&::after {
-					z-index: 2;
-					content: '';
-					width: 15%;
-					height: rem-calc(5);
-					background-color: rgba(set-color('grey-300'), 0.2);
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					border-radius: rem-calc(2);
-					transition: 0.08s ease-out;
-				}
-
-				&::before {
-					z-index: 1;
-					content: '';
-					width: 0;
-					height: rem-calc(3);
-					background-color: rgba(set-color('white'), 0.1);
-					position: absolute;
-					bottom: 1px;
-					left: rem-calc(56);
-					border-radius: rem-calc(20);
-					transition: 0.3s ease-out;
+				border-bottom: 1px solid rgba(set-color('white'), 0.2);
+				transition: 0.2s ease-out;
+				
+				a {
+					display: block;
 				}
 
 				&:hover {
-
-					&::after {
-						background-color: rgba(set-color('grey-300'), 0.5);
-					}
-
-					&::before {
-						width: 83%;
-						box-shadow: 2px 0 9px 3px rgba(177, 10, 0, 0.75);
-						background-color: rgba(set-color('white'), 0.8);
-					}
+					border-bottom: 1px solid rgba(set-color('red'),0.75);
+					box-shadow: 0 rem-calc(8 20 -8) rgba(set-color('red'), 0.75);
 				}
 			}
 		}

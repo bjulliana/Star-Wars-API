@@ -80,7 +80,8 @@ h6,
     font-size: rem-calc(13);
 }
 
-p img {
+p,
+img {
     margin: 0;
 }
 
@@ -127,9 +128,4 @@ a {
     text-decoration: none;
     line-height: inherit;
     color: inherit;
-    font-weight: 900;
-
-    &:hover {
-        color: set-color('accent-1');
-    }
 }
