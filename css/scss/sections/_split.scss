@@ -1,0 +1,135 @@
+
+.bg-left,
+.bg-right {
+	height: 100vh;
+	padding: rem-calc(30);
+	overflow: hidden;
+
+	@include breakpoint(large) {
+		padding: 0;
+	}
+
+	&.blur {
+		filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
+		-o-filter: blur(rem-calc(10));
+		-ms-filter: blur(rem-calc(10));
+		-moz-filter: blur(rem-calc(10));
+		-webkit-filter: blur(rem-calc(10));
+		filter: blur(rem-calc(10));
+		overflow: hidden;
+		margin: rem-calc(-20);
+		box-shadow: inset 0 0 0 rem-calc(3000) rgba(set-color('black'), 0.5);
+	}
+
+	.fg-left,
+	.fg-right {
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+
+		@include breakpoint(large) {
+			height: 80vh;
+		}
+
+		.content-wrapper {
+			padding: rem-calc(30 20);
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			color: set-color('white');
+
+			.content-wrapper-inner {
+				margin-bottom: rem-calc(20);
+				overflow: hidden;
+				height: 100%;
+			}
+
+			.logo {
+				display: block;
+				max-width: rem-calc(200);
+				margin: 0 auto;
+				margin-bottom: rem-calc(30);
+			}
+		}
+	}
+
+	.fg-right {
+		border-top-right-radius: rem-calc(5);
+		border-bottom-right-radius: rem-calc(5);
+		box-shadow: rem-calc(5 0 20 0) rgba(set-color('black'), 0.2), rem-calc(2 5 5 0) rgba(set-color('black'), 0.24);
+
+
+		@include breakpoint(large) {
+			width: 0;
+			transition: 0.08s ease-out;
+
+			.is-open & {
+				width: 66.66667%;
+			}
+		}
+	}
+
+	.fg-left {
+		border-top-left-radius: rem-calc(5);
+		border-bottom-left-radius: rem-calc(5);
+		box-shadow: rem-calc(-5 0 20 0) rgba(set-color('black'), 0.2), rem-calc(-2 5 5 0) rgba(set-color('black'), 0.24);
+	}
+}
+
+.bg-left {
+	background: url('#{$img-path}/left.jpg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	@include breakpoint(xlarge) {
+		background-position: left;
+		background-size: 60%;
+	}
+
+	&.js-panel {
+		height: 0;
+		transition: 0.3s ease-out;
+
+		@include breakpoint(large) {
+			height: 100vh !important;
+		}
+
+		&.is-active {
+			height: 100vh;
+		}
+	}
+}
+
+.bg-right {
+	background: url('#{$img-path}/right.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	@include breakpoint(xlarge) {
+		background-position: right;
+		background-size: 60%;
+	}
+
+	&.js-panel {
+		height: 0;
+		transition: height 0.3s ease-out;
+
+		@include breakpoint(large) {
+			height: 100vh !important;
+		}
+
+		&.is-active {
+			height: 100vh;
+			margin-top: rem-calc(-60);
+
+			@include breakpoint(large) {
+				margin-top: 0;
+			}
+		}
+	}
+}

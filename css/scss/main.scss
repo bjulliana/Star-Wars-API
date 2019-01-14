@@ -1,0 +1,23 @@
+//Basic
+@import 'base/functions.scss';
+@import 'base/global.scss';
+@import 'base/layout.scss';
+@import 'base/typography.scss';
+@import 'base/variables.scss';
+
+//Components
+@import 'components/forms.scss';
+
+//Sections
+@import 'sections/split.scss';
+@import 'sections/characters.scss';
+@import 'sections/details.scss';
+@import 'sections/style-guide.scss';
+
+.bg-white {
+	background-color: white;
+}
+
+.bg-dark {
+	background-color: black;
+}
