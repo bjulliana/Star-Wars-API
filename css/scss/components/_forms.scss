@@ -15,10 +15,10 @@ select {
     transition: 0.3s ease-in-out;
     outline: 0;
     border: 0;
+    border-radius: rem-calc(2);
     background: rgba(set-color('white'), 0.8);
-	width: 100%;
     padding: rem-calc(15);
-	border-radius: rem-calc(2);
+    width: 100%;
     max-width: 100%;
     vertical-align: middle;
     color: set-color('grey-700');

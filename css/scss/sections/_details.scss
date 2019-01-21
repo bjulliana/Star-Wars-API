@@ -1,67 +1,61 @@
 .content-wrapper {
-	position: relative;
+    position: relative;
 
-	.close-icon {
-		position: absolute;
-		top: 0;
-		right: rem-calc(-20);
-		cursor: pointer;
+    .close-icon {
+        position: absolute;
+        top: 0;
+        right: rem-calc(-20);
+        cursor: pointer;
 
-		.toggle-icon {
-			display: block;
-			position: relative;
-			width: 100%;
-			-webkit-transition: margin 600ms;
-			-moz-transition: margin 600ms;
-			transition: margin 600ms;
-			cursor: pointer;
+        .toggle-icon {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            width: 100%;
 
-			.bar {
-				display: block;
-				width: 3.8em;
-				height: rem-calc(4);
-				margin: 0.9em;
-				border-radius: rem-calc(10);
-				border-right: 2.8em solid set-color('white');
-				border-left: 0.6em solid set-color('grey-300');
-				box-sizing: border-box;
-				transition-property: transform, margin, border-right-color, box-shadow;
-				transition-duration: 600ms;
+            .bar {
+                display: block;
+                margin: rem-calc(14);
+                border-right: 2.8em solid set-color('white');
+                border-left: 0.6em solid set-color('grey-300');
+                border-radius: rem-calc(10);
+                width: 3.8em;
+                height: rem-calc(4);
+                box-sizing: border-box;
 
-				&:nth-of-type(1) {
-					margin-left: 1.4em;
-					transform: rotate(-137deg) translateY(rem-calc(-24));
-				}
+                &:nth-of-type(1) {
+                    transform: rotate(-137deg) translateY(rem-calc(-24));
+                    margin-left: rem-calc(22);
+                }
 
-				&:nth-of-type(2) {
-					margin-left: 0.5em;
-					transform: rotate(-42deg) translateY(rem-calc(-2));
-				}
+                &:nth-of-type(2) {
+                    transform: rotate(-42deg) translateY(rem-calc(-2));
+                    margin-left: rem-calc(8);
+                }
+            }
+        }
+    }
 
-			}
-		}
-	}
-	
-	.movie-info {
-		overflow-y: scroll;
-		height: 100%;
-		padding: rem-calc(0 20);
-		
-		.movie-title {
-			color: set-color('white');
-			text-transform: uppercase;
-			margin-bottom: 0;
-		}
+    .movie-info {
+        padding: rem-calc(0 20);
+        height: 100%;
+        overflow-y: scroll;
 
-		.movie-episode {
-			margin-bottom: rem-calc(15);
-		}
+        .movie-title {
+            margin-bottom: 0;
+            text-transform: uppercase;
+            color: set-color('white');
+        }
 
-		.movie-poster {
-			max-width: rem-calc(250);
-			margin: 0 auto;
-			display: block;
-			margin-bottom: rem-calc(15);
-		}
-	}
+        .movie-episode {
+            margin-bottom: rem-calc(15);
+        }
+
+        .movie-poster {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: rem-calc(15);
+            max-width: rem-calc(250);
+        }
+    }
 }
