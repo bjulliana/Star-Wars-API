@@ -97,7 +97,7 @@
 			movieDir.innerHTML     = `<strong>Directed By:</strong> ${data.director}`;
 			movieProd.innerHTML    = `<strong>Produced By:</strong> ${data.producer}`;
 			movieDate.innerHTML    = `<strong>Release Date:</strong> ${data.release_date.split('-').reverse().join('-')}`;
-			movieImage.innerHTML   = `<img src="/images/movies/episode_${data.episode_id}.jpg" alt="${data.title} Movie Poster" class="movie-poster">`;
+			movieImage.innerHTML   = `<img src="images/movies/episode_${data.episode_id}.jpg" alt="${data.title} Movie Poster" class="movie-poster">`;
 		};
 
 		//Display Search Results
